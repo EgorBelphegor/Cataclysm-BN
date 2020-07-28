@@ -388,7 +388,8 @@
     "desc": [ "You have been stung!" ],
     "rating": "bad",
     "base_mods": { "pain_min": [ 1 ] },
-    "show_in_info": true
+    "show_in_info": true,
+    "blood_analysis_description": "Stung"
   },
   {
     "type": "effect_type",
@@ -410,7 +411,8 @@
       "hurt_min": [ 1 ],
       "hurt_chance": [ 450, 2700 ]
     },
-    "show_in_info": true
+    "show_in_info": true,
+    "blood_analysis_description": "Poison"
   },
   {
     "type": "effect_type",
@@ -434,7 +436,8 @@
       "hurt_max": [ 2 ],
       "hurt_chance": [ 300, 1800 ]
     },
-    "show_in_info": true
+    "show_in_info": true,
+    "blood_analysis_description": "Poison"
   },
   {
     "type": "effect_type",
@@ -488,7 +491,8 @@
     "int_decay_tick": 600,
     "base_mods": { "dex_mod": [ -0.34, -0.17 ], "speed_mod": [ -5, -3 ] },
     "scaling_mods": { "dex_mod": [ -0.34, -0.17 ], "speed_mod": [ -5, -3 ] },
-    "show_in_info": true
+    "show_in_info": true,
+    "blood_analysis_description": "Paralyzing Poison"
   },
   {
     "type": "effect_type",
@@ -520,7 +524,8 @@
     "id": "melatonin",
     "name": [ "Melatonin Supplements" ],
     "desc": [ "You took some melatonin supplements.  These will help with sleep deprivation." ],
-    "rating": "good"
+    "rating": "good",
+    "blood_analysis_description": "Melatonin"
   },
   {
     "type": "effect_type",
@@ -620,13 +625,17 @@
   },
   {
     "type": "effect_type",
-    "id": "took_flumed"
+    "id": "took_flumed",
+    "rating": "good",
+    "blood_analysis_description": "Antihistamines"
   },
   {
     "type": "effect_type",
     "id": "took_xanax",
     "dur_add_perc": 22,
-    "base_mods": { "stim_tick": [ 150 ], "stim_min": [ -1 ], "stim_min_val": [ -1 ] }
+    "base_mods": { "stim_tick": [ 150 ], "stim_min": [ -1 ], "stim_min_val": [ -1 ] },
+    "rating": "good",
+    "blood_analysis_description": "Xanax"
   },
   {
     "type": "effect_type",
@@ -636,7 +645,9 @@
   },
   {
     "type": "effect_type",
-    "id": "took_prozac"
+    "id": "took_prozac",
+    "rating": "good",
+    "blood_analysis_description": "Prozac"
   },
   {
     "type": "effect_type",
@@ -657,7 +668,9 @@
   },
   {
     "type": "effect_type",
-    "id": "took_thorazine"
+    "id": "took_thorazine",
+    "rating": "good",
+    "blood_analysis_description": "Antipsychotics"
   },
   {
     "type": "effect_type",
@@ -681,25 +694,33 @@
     "type": "effect_type",
     "id": "pkill1",
     "max_duration": "4 m",
-    "base_mods": { "pkill_tick": [ 42 ], "pkill_min": [ 1 ], "pkill_max_val": [ 15 ] }
+    "base_mods": { "pkill_tick": [ 42 ], "pkill_min": [ 1 ], "pkill_max_val": [ 15 ] },
+    "rating": "good",
+    "blood_analysis_description": "Minor Painkiller"
   },
   {
     "type": "effect_type",
     "id": "pkill2",
     "pkill_addict_reduces": true,
-    "base_mods": { "pkill_tick": [ 42 ], "pkill_min": [ 2 ] }
+    "base_mods": { "pkill_tick": [ 42 ], "pkill_min": [ 2 ] },
+    "rating": "good",
+    "blood_analysis_description": "Moderate Painkiller"
   },
   {
     "type": "effect_type",
     "id": "pkill3",
     "pkill_addict_reduces": true,
-    "base_mods": { "pkill_tick": [ 12 ], "pkill_min": [ 1 ] }
+    "base_mods": { "pkill_tick": [ 12 ], "pkill_min": [ 1 ] },
+    "rating": "good",
+    "blood_analysis_description": "Heavy Painkiller"
   },
   {
     "type": "effect_type",
     "id": "pkill_l",
     "pkill_addict_reduces": true,
-    "base_mods": { "pkill_max_val": [ 40 ], "pkill_tick": [ 120 ], "pkill_min": [ 1 ] }
+    "base_mods": { "pkill_max_val": [ 40 ], "pkill_tick": [ 120 ], "pkill_min": [ 1 ] },
+    "rating": "good",
+    "blood_analysis_description": "Slow-Release Painkiller"
   },
   {
     "type": "effect_type",
@@ -765,7 +786,8 @@
       "dex_mod": [ -1, -0.5 ],
       "vomit_chance": [ -400 ],
       "fatigue_chance": [ 101 ]
-    }
+    },
+    "blood_analysis_description": "Bacterial Infection"
   },
   {
     "type": "effect_type",
@@ -841,7 +863,8 @@
     "rating": "bad",
     "max_intensity": 3,
     "resist_traits": [ "POISRESIST" ],
-    "base_mods": { "speed_mod": [ -10 ], "str_mod": [ -1 ], "dex_mod": [ -1 ] }
+    "base_mods": { "speed_mod": [ -10 ], "str_mod": [ -1 ], "dex_mod": [ -1 ] },
+    "blood_analysis_description": "Fungal Infection"
   },
   {
     "type": "effect_type",
@@ -849,7 +872,8 @@
     "name": [ "Hallucinating" ],
     "desc": [ "You can't trust everything that you see." ],
     "rating": "bad",
-    "base_mods": { "int_mod": [ -2 ], "dex_mod": [ -1 ], "per_mod": [ -4 ] }
+    "base_mods": { "int_mod": [ -2 ], "dex_mod": [ -1 ], "per_mod": [ -4 ] },
+    "blood_analysis_description": "Hallucinations"
   },
   {
     "type": "effect_type",
@@ -863,11 +887,15 @@
   {
     "type": "effect_type",
     "id": "pblue",
-    "base_mods": { "rad_chance": [ 600 ], "rad_min": [ -1 ] }
+    "base_mods": { "rad_chance": [ 600 ], "rad_min": [ -1 ] },
+    "blood_analysis_description": "Prussian Blue",
+    "rating": "good"
   },
   {
     "type": "effect_type",
-    "id": "iodine"
+    "id": "iodine",
+    "rating": "good",
+    "blood_analysis_description": "Potassium Iodide"
   },
   {
     "type": "effect_type",
@@ -916,7 +944,8 @@
   {
     "type": "effect_type",
     "id": "hallu",
-    "max_duration": "30 m"
+    "max_duration": "30 m",
+    "blood_analysis_description": "Hallucinations"
   },
   {
     "type": "effect_type",
@@ -1010,7 +1039,8 @@
   },
   {
     "type": "effect_type",
-    "id": "dermatik"
+    "id": "dermatik",
+    "blood_analysis_description": "Insect Parasite"
   },
   {
     "type": "effect_type",
@@ -1055,7 +1085,8 @@
       "per_mod": [ -1, 0 ],
       "int_mod": [ -2, -1 ],
       "cough_chance": [ 300, 0 ]
-    }
+    },
+    "blood_analysis_description": "Viral Infection"
   },
   {
     "type": "effect_type",
@@ -1082,20 +1113,25 @@
       "pain_min": [ 1, 0 ],
       "cough_chance": [ 300, 0 ],
       "vomit_chance": [ 3600, 7200 ]
-    }
+    },
+    "blood_analysis_description": "Viral Infection"
   },
   {
     "type": "effect_type",
     "id": "flushot",
     "name": [ "Vaccinated" ],
     "desc": [ "You have been vaccinated for the flu recently." ],
-    "blocks_effects": [ "flu" ]
+    "blocks_effects": [ "flu" ],
+    "rating": "good",
+    "blood_analysis_description": "Antivirals"
   },
   {
     "type": "effect_type",
     "id": "took_antiasthmatic",
     "name": [ "Took antiasthmatic drugs" ],
-    "desc": [ "You have taken an antiasthmatic drug recently." ]
+    "desc": [ "You have taken an antiasthmatic drug recently." ],
+    "rating": "good",
+    "blood_analysis_description": "Antiasthmatics"
   },
   {
     "type": "effect_type",
@@ -1147,7 +1183,8 @@
     "int_dur_factor": "50 s",
     "removes_effects": [ "infected", "bite", "bleed", "fungus", "dermatik", "winded" ],
     "base_mods": { "str_mod": [ -1 ], "dex_mod": [ -2 ], "per_mod": [ -2 ], "int_mod": [ -1 ] },
-    "scaling_mods": { "str_mod": [ 2 ], "dex_mod": [ 3 ], "per_mod": [ 3 ], "int_mod": [ 1 ] }
+    "scaling_mods": { "str_mod": [ 2 ], "dex_mod": [ 3 ], "per_mod": [ 3 ], "int_mod": [ 1 ] },
+    "blood_analysis_description": "Healing Medication"
   },
   {
     "type": "effect_type",
@@ -1169,7 +1206,8 @@
       "int_mod": [ -1 ],
       "stamina_min": [ 4 ],
       "stamina_max": [ 8 ]
-    }
+    },
+    "blood_analysis_description": "Stimulants"
   },
   {
     "type": "effect_type",
@@ -1191,7 +1229,8 @@
       "per_mod": [ -1 ],
       "stamina_min": [ -2 ]
     },
-    "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 4 ], "dex_mod": [ 4 ], "int_mod": [ -7 ], "per_mod": [ 2 ], "stamina_min": [ 4 ] }
+    "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 4 ], "dex_mod": [ 4 ], "int_mod": [ -7 ], "per_mod": [ 2 ], "stamina_min": [ 4 ] },
+    "blood_analysis_description": "Adrenaline Spike"
   },
   {
     "type": "effect_type",
@@ -1214,7 +1253,8 @@
       "per_mod": [ -1 ],
       "stamina_min": [ -2 ]
     },
-    "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 5 ], "dex_mod": [ 4 ], "int_mod": [ -7 ], "per_mod": [ 2 ], "stamina_min": [ 4 ] }
+    "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 5 ], "dex_mod": [ 4 ], "int_mod": [ -7 ], "per_mod": [ 2 ], "stamina_min": [ 4 ] },
+    "blood_analysis_description": "Unknown Fungal Stimulants"
   },
   {
     "type": "effect_type",
@@ -1231,7 +1271,8 @@
       "vomit_chance": [ 2000 ],
       "stamina_min": [ -4 ]
     },
-    "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 4 ], "dex_mod": [ 4 ], "int_mod": [ 1 ], "per_mod": [ 5 ], "stamina_min": [ 8 ] }
+    "scaling_mods": { "speed_mod": [ 30 ], "str_mod": [ 4 ], "dex_mod": [ 4 ], "int_mod": [ 1 ], "per_mod": [ 5 ], "stamina_min": [ 8 ] },
+    "blood_analysis_description": "Methamphetamines"
   },
   {
     "type": "effect_type",
@@ -1241,7 +1282,8 @@
     "max_intensity": 2,
     "int_dur_factor": "10 m",
     "base_mods": { "per_mod": [ 1 ] },
-    "scaling_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "per_mod": [ -1 ], "vomit_chance": [ 500 ] }
+    "scaling_mods": { "str_mod": [ -1 ], "dex_mod": [ -1 ], "per_mod": [ -1 ], "vomit_chance": [ 500 ] },
+    "blood_analysis_description": "Nicotine"
   },
   {
     "type": "effect_type",
@@ -1253,13 +1295,15 @@
     "name": [ "High" ],
     "desc": [ "You are high as a kite." ],
     "apply_message": "You feel lightheaded.",
-    "base_mods": { "int_mod": [ -1 ], "per_mod": [ -1 ] }
+    "base_mods": { "int_mod": [ -1 ], "per_mod": [ -1 ] },
+    "blood_analysis_description": "Intoxicant: Other"
   },
   {
     "type": "effect_type",
     "id": "weed_high",
     "apply_message": "You feel lightheaded.",
-    "base_mods": { "per_mod": [ -1 ] }
+    "base_mods": { "per_mod": [ -1 ] },
+    "blood_analysis_description": "Intoxicant: THC"
   },
   {
     "type": "effect_type",
@@ -1283,6 +1327,7 @@
     ],
     "max_intensity": 5,
     "apply_message": "You feel lightheaded.",
+    "blood_analysis_description": "Alcohol",
     "int_dur_factor": "100 m",
     "miss_messages": [ [ "You feel woozy.", 1 ] ],
     "base_mods": {
@@ -1346,7 +1391,9 @@
     "type": "effect_type",
     "id": "valium",
     "removes_effects": [ "shakes" ],
-    "base_mods": { "stim_tick": [ 150 ], "stim_chance": [ 2 ], "stim_min": [ 1 ], "stim_min_val": [ -1 ] }
+    "base_mods": { "stim_tick": [ 150 ], "stim_chance": [ 2 ], "stim_min": [ 1 ], "stim_min_val": [ -1 ] },
+    "rating": "good",
+    "blood_analysis_description": "Benzodiazepines"
   },
   {
     "type": "effect_type",
@@ -1354,7 +1401,9 @@
     "name": [ "Took anticonvulsant drugs" ],
     "desc": [
       "You took anticonvulsant drugs some time ago and you might still be under its influence.\nPrescription note says its effect duration may vary, so your estimate may be inaccurate."
-    ]
+    ],
+    "rating": "good",
+    "blood_analysis_description": "Anticonvulsants"
   },
   {
     "type": "effect_type",
@@ -1374,7 +1423,8 @@
     "type": "effect_type",
     "id": "tapeworm",
     "rating": "bad",
-    "base_mods": { "hunger_chance": [ 50 ], "hunger_min": [ 1 ] }
+    "base_mods": { "hunger_chance": [ 50 ], "hunger_min": [ 1 ] },
+    "blood_analysis_description": "Intestinal Parasite"
   },
   {
     "type": "effect_type",
@@ -1386,26 +1436,30 @@
       "h_mod_chance": [ 512 ],
       "h_mod_min": [ -10 ],
       "cough_chance": [ 300, 0 ]
-    }
+    },
+    "blood_analysis_description": "Hemolytic Parasites"
   },
   {
     "type": "effect_type",
     "id": "brainworms",
     "rating": "bad",
-    "base_mods": { "pain_chance": [ 512 ], "pain_min": [ 2 ], "pain_max": [ 8 ], "h_mod_chance": [ 512 ], "h_mod_min": [ -10 ] }
+    "base_mods": { "pain_chance": [ 512 ], "pain_min": [ 2 ], "pain_max": [ 8 ], "h_mod_chance": [ 512 ], "h_mod_min": [ -10 ] },
+    "blood_analysis_description": "Intracranial Parasites"
   },
   {
     "type": "effect_type",
     "id": "paincysts",
     "rating": "bad",
-    "base_mods": { "pain_chance": [ 256 ], "pain_min": [ 1 ], "pain_max": [ 4 ], "fatigue_chance": [ 256 ], "fatigue_min": [ 1 ] }
+    "base_mods": { "pain_chance": [ 256 ], "pain_min": [ 1 ], "pain_max": [ 4 ], "fatigue_chance": [ 256 ], "fatigue_min": [ 1 ] },
+    "blood_analysis_description": "Intramuscular Parasites"
   },
   {
     "type": "effect_type",
     "id": "tetanus",
     "rating": "bad",
     "resist_effects": [ "valium" ],
-    "base_mods": { "dex_mod": [ -4, 0 ] }
+    "base_mods": { "dex_mod": [ -4, 0 ] },
+    "blood_analysis_description": "Clostridium Tetani Infection"
   },
   {
     "type": "effect_type",
@@ -1413,7 +1467,8 @@
     "name": [ "Experiencing Datura" ],
     "desc": [ "Buy the ticket, take the ride.  The datura has you now." ],
     "rating": "bad",
-    "base_mods": { "per_mod": [ -6 ], "dex_mod": [ -3 ], "thirst_chance": [ 8 ], "thirst_min": [ 1 ], "thirst_max_val": [ 20 ] }
+    "base_mods": { "per_mod": [ -6 ], "dex_mod": [ -3 ], "thirst_chance": [ 8 ], "thirst_min": [ 1 ], "thirst_max_val": [ 20 ] },
+    "blood_analysis_description": "Anticholinergic Tropane Alkaloids"
   },
   {
     "type": "effect_type",
@@ -1463,7 +1518,8 @@
   },
   {
     "type": "effect_type",
-    "id": "narcosis"
+    "id": "narcosis",
+    "blood_analysis_description": "Narcosis"
   },
   {
     "type": "effect_type",
@@ -1533,7 +1589,8 @@
       [ "Your bones become stronger as your calcium deficiency improves.", "good" ]
     ],
     "max_intensity": 3,
-    "rating": "bad"
+    "rating": "bad",
+    "blood_analysis_description": "Hypocalcemia"
   },
   {
     "type": "effect_type",
@@ -1547,7 +1604,8 @@
       [ "Your feel stronger as your anemia starts to improve.", "good" ]
     ],
     "max_intensity": 3,
-    "rating": "bad"
+    "rating": "bad",
+    "blood_analysis_description": "Anemia"
   },
   {
     "type": "effect_type",
@@ -1561,7 +1619,8 @@
       [ "Your vision improves as your Vitamin A deficiency improves.", "good" ]
     ],
     "max_intensity": 3,
-    "rating": "bad"
+    "rating": "bad",
+    "blood_analysis_description": "Vitamin A Deficiency"
   },
   {
     "type": "effect_type",
@@ -1575,7 +1634,8 @@
       [ "Your ability to heal returns as your Vitamin B12 deficiency improves.", "good" ]
     ],
     "max_intensity": 3,
-    "rating": "bad"
+    "rating": "bad",
+    "blood_analysis_description": "Vitamin B Deficiency"
   },
   {
     "type": "effect_type",
@@ -1589,7 +1649,8 @@
       [ "Your scurvy lessens as your Vitamin C deficiency improves.", "good" ]
     ],
     "max_intensity": 3,
-    "rating": "bad"
+    "rating": "bad",
+    "blood_analysis_description": "Scurvy"
   },
   {
     "type": "effect_type",
@@ -1598,7 +1659,8 @@
     "desc": [ "An excess of vitamins has badly affected your metabolism." ],
     "apply_message": "Your metabolism becomes unstable.",
     "remove_message": "Your metabolism becomes more stable.",
-    "rating": "bad"
+    "rating": "bad",
+    "blood_analysis_description": "Hypervitaminosis"
   },
   {
     "type": "effect_type",
@@ -1668,7 +1730,9 @@
     "desc": [ "You are under the influence of analgesic substances to relieve pain, but they may numb you a bit." ],
     "max_intensity": 30,
     "int_dur_factor": "10 s",
-    "scaling_mods": { "speed_mod": [ -1 ] }
+    "scaling_mods": { "speed_mod": [ -1 ] },
+    "rating": "good",
+    "blood_analysis_description": "Painkiller"
   },
   {
     "type": "effect_type",
@@ -1720,7 +1784,8 @@
     "desc": [ "You suffer symptoms of a radiation sickness that weakens your body." ],
     "max_intensity": 2000,
     "int_dur_factor": "10 s",
-    "scaling_mods": { "speed_mod": [ -0.2 ], "str_mod": [ -0.125 ], "dex_mod": [ -0.09 ], "int_mod": [ -0.1 ], "per_mod": [ -0.083 ] }
+    "scaling_mods": { "speed_mod": [ -0.2 ], "str_mod": [ -0.125 ], "dex_mod": [ -0.09 ], "int_mod": [ -0.1 ], "per_mod": [ -0.083 ] },
+    "blood_analysis_description": "Irradiated"
   },
   {
     "type": "effect_type",
@@ -1729,7 +1794,8 @@
     "desc": [ "You're very jittery and pumped up, probably from some stimulants." ],
     "max_intensity": 1000,
     "int_dur_factor": "1 s",
-    "scaling_mods": { "speed_mod": [ 0.33 ], "dex_mod": [ 0.1 ], "per_mod": [ 0.14 ] }
+    "scaling_mods": { "speed_mod": [ 0.33 ], "dex_mod": [ 0.1 ], "per_mod": [ 0.14 ] },
+    "blood_analysis_description": "Stimulants"
   },
   {
     "type": "effect_type",
@@ -1739,7 +1805,8 @@
     "max_intensity": 1000,
     "int_dur_factor": "1 s",
     "scaling_mods": { "speed_mod": [ -0.333 ], "dex_mod": [ -0.05 ], "per_mod": [ -0.05 ] },
-    "miss_messages": [ [ "You feel woozy.", 1 ] ]
+    "miss_messages": [ [ "You feel woozy.", 1 ] ],
+    "blood_analysis_description": "Depressants"
   },
   {
     "type": "effect_type",
@@ -1750,7 +1817,8 @@
     "int_dur_factor": 1,
     "base_mods": { "dex_mod": [ -0.88 ], "per_mod": [ -0.25 ] },
     "scaling_mods": { "speed_mod": [ -0.25 ], "per_mod": [ -0.071 ] },
-    "miss_messages": [ [ "You shake with the excess stimulation.", 1 ] ]
+    "miss_messages": [ [ "You shake with the excess stimulation.", 1 ] ],
+    "blood_analysis_description": "Stimulants"
   },
   {
     "type": "effect_type",
