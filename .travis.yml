@@ -243,11 +243,11 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: YkZwEzn5TJI6fdqiYNUdWp4FaIQxvGgznW6YduSEGiiOawJOWrGqk10NGKCuOicOBI32h7ivoEIuPWc1pvABgY45WgFxI8XprBtt67sNvu//cF8GGJztevdVKbuMFa7ENRF3AuQU/OI1ll2kN5WFz+mQwfXI3Cp1kRNqUt26i8Xf7TWuXthjPob9oitlIEdq2P80Q3d6+SM8Mu2qyYF6TqUY45UMsxIFaf0HpJqgqrDZYF4iOKAoK1GihpgBYZb/VEkQWMR9yV/YOsSMDVhFXCr32tcjkxz9wY1azr6RdRK15xO/uJa8/j00a8E4rWZ/NIL3p2ZHGGXSrgDM12d1AY0nYs4Hr4VqtGv6jSemg/k9fml/7KHRa04oTv74ncUS1YYyVggQqGYd/Odekkj7yewOINUWNeZfMgsqYUgX1rlGiIxP5lkoMPwQRkFVo31k/eQ6SwrprYpi0QZWayy56LdhKZELiiuba6C5lWu5/39+hjxxsRonEwupCnuh6dGIEzhDhIEu7H2JRfqh1mxU8nOWSKac9PkOeQRBERAxiidBjIccDLVfwkxpeUSdXgrMXJ3VKNvdCOJmiA3ExHTvOCNfxMk6TfOLwjkpOOB+DqnN9G7STMjKZfO505W0QPWKHGFNbfD+g/qd4rTY7Fk+j5eDK+3WDeeEcl06vZmmij0=
+    secure: qhq0lgYXxXFDJagESzKYWkn1VwVwhph4H5P/NdGcyjM2gxUGEyXbx496mP/qnNlc52Cbkjsp4Zau7r0vpqdt0CZKK8h68s+tkKTAHjuX/0rn8wHjAS6wRw0tMLJaKxd7Yl9Tj06I8htOnMIsU1A6HOB61cpFL72UOXzGG+Hk9H1lzOmPCZbb/3GdHFCJKs/uOnBFZ/p6/5a73sEEjTlhygIJQHplUw3N9MEGB6bPtKpYZ8iNn/QyeM+wZoI1ZTtVkdVgNMQX3mBNH9UfCr4pLFQrbeAaWoguqTIfvYO41ba5+Ay+IWdnAj5xeMyLDIVDLl5kWfNGn4tWqpj1b24VtQf5obFaebcdR+oK++MMFjliUywe2gd4TkoB0WMwXPGBy+M91Vn7UY3W7Me4RB6IrthTflmHIuyv8JEmVegqCMe4z4+3DB8Np0q8D9fGP7HzF7MH2AQAXiIlqv57YgJM+kWunRAzU3Ur2t/1NrwQW4WltjfRET9ytLioyXBFKGHQAE5eGR3VjvxHp2qdX1UaXvnQ42hJzqdcnTNHDc1hzewqmKyMZVUcyzL3jYniqL/PDe75LDMh6mMH9Q9Bx61IL0fnuIveNGAhnn6w33gizdSbzHZR/FNv6WGjrkyVDaayJjhLiCsTvQ5NoMnhhhHHM+xUoCw3vezF6tx+cCXJhQs=
   file_glob: true
   file: ${RELEASE_PKG_FILES}
   skip_cleanup: true
   on:
-    repo: cataclysmbnteam/Cataclysm-BN
-    branch: upload
+    repo: EgorBelphegor/Cataclysm-BN
+    branch: mycata
     condition: $ENABLE_DEPLOY = '1' && $DEPLOY = '1'
