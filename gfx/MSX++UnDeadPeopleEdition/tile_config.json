@@ -1679,6 +1679,7 @@
           "bg": 957,
           "rotates": false
         },
+		{ "id": "vp_autodoc", "fg": 4737, "bg": 3961, "rotates": false },
         { "id": "ant_egg", "fg": 1076, "bg": 957, "rotates": false },
         { "id": "antenna", "fg": 1631, "bg": 957, "rotates": false },
         { "id": [ "antibiotics", "weak_antibiotic" ], "fg": 1073, "bg": 957, "rotates": false },

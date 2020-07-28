@@ -1319,6 +1319,8 @@ Those flags are added by the game code to specific items (that specific welder, 
 
 - ```ADVANCED_PLANTER``` This planter doesn't spill seeds and avoids damaging itself on non-diggable surfaces.
 - ```AUTOPILOT``` This part will enable a vehicle to have a simple autopilot.
+- ```AUTODOC``` This part can be an autodoc console, it also needs the ```autodoc``` examine action.
+- ```AUTODOC_COUCH``` This part can be a couch for a part with the ```autodoc``` examine action.
 - ```AISLE_LIGHT```
 - ```AISLE``` Player can move over this part with less speed penalty than normal.
 - ```ALTERNATOR``` Recharges batteries installed on the vehicle. Can only be installed on a part with ```E_ALTERNATOR``` flag.

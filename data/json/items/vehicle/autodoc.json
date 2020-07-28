@@ -1,0 +1,34 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "vh_autodoc_couch",
+    "name": { "str": "autodoc couch" },
+    "description": "Can be installed on a vehicle.",
+    "weight": "30000 g",
+    "to_hit": -8,
+    "color": "red",
+    "symbol": "H",
+    "material": [ "cotton", "wood" ],
+    "volume": "30 L",
+    "bashing": 8,
+    "category": "veh_parts",
+    "price": 10000,
+    "price_postapoc": 50
+  },
+  
+  {
+    "type": "GENERIC",
+    "id": "vh_autodoc",
+    "name": { "str": "autodoc" },
+    "description": "Can be installed on a vehicle.",
+    "price": 500000,
+    "price_postapoc": 1000,
+    "symbol": "&",
+    "color": "light_cyan",
+    "weight": "80000 g",
+    "volume": "80 L",
+    "to_hit": -8,
+	"material": ["steel","plastic"],
+	"category": "veh_parts"
+  }
+]

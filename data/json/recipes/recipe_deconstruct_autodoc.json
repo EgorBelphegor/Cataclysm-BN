@@ -1,0 +1,32 @@
+[
+ {
+    "result": "vh_autodoc_couch",
+    "type": "uncraft",
+    "time": "1200 s",
+    "qualities": [ { "id": "HAMMER", "level": 2 } ,{ "id": "SCREW", "level": 1 }],
+    "components": [ 
+	  [ [ "2x4", 12 ] ],
+	  [ [ "rag", 30 ] ],
+	  [ [ "nail", 8 ] ],
+	  [ [ "cable", 2 ] ]
+	]
+ },
+ {
+    "result": "vh_autodoc",
+    "type": "uncraft",
+    "time": "1200 s",
+    "qualities": [ { "id": "HAMMER", "level": 2 } ,{ "id": "SCREW", "level": 1 }],
+    "components": [ 
+	  [ [ "processor", 1 ] ],
+	  [ [ "RAM", 6 ] ],
+	  [ [ "cable", 5 ] ],
+	  [ [ "small_lcd_screen", 1 ] ],
+	  [ [ "e_scrap", 13 ] ],
+	  [ [ "circuit", 8 ] ],
+	  [ [ "power_supply", 3 ] ],
+	  [ [ "amplifier", 3 ] ],
+	  [ [ "plastic_chunk", 11 ] ],
+	  [ [ "scrap", 7 ] ]
+	]
+ }
+]

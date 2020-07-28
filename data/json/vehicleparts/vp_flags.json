@@ -25,6 +25,18 @@
     "info": "Armor plate.  Will partially protect other components on the same frame from damage."
   },
   {
+    "id": "AUTODOC",
+    "type": "json_flag",
+    "context": [ "vehicle_part" ],
+    "info": "Can be used to install and uninstall bionics"
+  },
+  {
+    "id": "AUTODOC_COUCH",
+    "type": "json_flag",
+    "context": [ "vehicle_part" ],
+    "info": "Can be used as autodoc couch"
+  },
+  {
     "id": "BED",
     "type": "json_flag",
     "context": [ "vehicle_part" ],
