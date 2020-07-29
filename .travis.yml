@@ -125,8 +125,8 @@ jobs:
           packages: ["g++-8", "g++-8-multilib", "libc6-dbg"]
           sources: *apt_sources
 
-    # Then build different configurations and targets in parallel.
-    - stage: "Main Compilers"
+    # Finally check the compiler variants
+    - stage: compilers
       env: COMPILER=g++ MODS=--mods=magiclysm LOCALIZE=0
       name: "GCC 5.3 Make build with curses, Magiclysm, and no Localization"
       compiler: gcc
@@ -143,10 +143,7 @@ jobs:
           packages: ["clang-8"]
           sources: [*apt_sources, llvm-toolchain-xenial-8]
 
-    # Finally check the compiler variants
-    - stage: compilers
-      # GCC 5.4 is default on Xenial
-      env: COMPILER=g++
+    - env: COMPILER=g++
       name: "GCC 5.4 Make build with Curses"
       if: type != pull_request
 
