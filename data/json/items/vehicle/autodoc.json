@@ -15,7 +15,6 @@
     "price": 10000,
     "price_postapoc": 50
   },
-  
   {
     "type": "GENERIC",
     "id": "vh_autodoc",
@@ -28,7 +27,7 @@
     "weight": "80000 g",
     "volume": "80 L",
     "to_hit": -8,
-	"material": ["steel","plastic"],
-	"category": "veh_parts"
+    "material": [ "steel", "plastic" ],
+    "category": "veh_parts"
   }
 ]
