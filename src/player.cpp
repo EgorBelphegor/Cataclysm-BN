@@ -3954,6 +3954,12 @@ int player::sleep_spot( const tripoint &p ) const
         sleepy += 10; //comfy water!
     }
 
+    if (!is_deaf() && g->weather.weather >= WEATHER_DRIZZLE && g->weather.weather <= WEATHER_ACID_RAIN && 
+        pos().z >= 0 && g->is_sheltered(pos()) ) {
+        sleepy += 3;
+        add_msg_if_player(m_info, _("Rain sounds outside help you to fall asleep."));
+    }
+
     if( get_fatigue() < TIRED + 1 ) {
         sleepy -= static_cast<int>( ( TIRED + 1 - get_fatigue() ) / 4 );
     } else {
