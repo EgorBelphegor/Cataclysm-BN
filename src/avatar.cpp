@@ -390,9 +390,10 @@ bool avatar::read( item &it, const bool continuous )
         return false;
     }
     if( !has_identified( it.typeId() ) ) {
-        // We insta-identify the book, then try to read it
+        // We insta-identify the book
         items_identified.insert( it.typeId() );
         skim_book_msg( it, *this );
+        return false;
     }
     std::vector<std::string> fail_messages;
     const player *reader = get_book_reader( it, fail_messages );
