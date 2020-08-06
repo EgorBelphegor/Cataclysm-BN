@@ -4409,6 +4409,7 @@ void iexamine::autodoc( player &p, const tripoint &examp )
         INSTALL_CBM,
         UNINSTALL_CBM,
         BONESETTING,
+        BLOOD_ANALYSIS,
     };
 
     bool adjacent_couch = false;
@@ -4490,6 +4491,7 @@ void iexamine::autodoc( player &p, const tripoint &examp )
     amenu.addentry( INSTALL_CBM, true, 'i', _( "Choose Compact Bionic Module to install" ) );
     amenu.addentry( UNINSTALL_CBM, true, 'u', _( "Choose installed bionic to uninstall" ) );
     amenu.addentry( BONESETTING, true, 's', _( "Splint broken limbs" ) );
+    amenu.addentry( BLOOD_ANALYSIS, true, 'b', _( "Conduct blood analysis" ) );
 
     amenu.query();
 
@@ -4648,7 +4650,14 @@ void iexamine::autodoc( player &p, const tripoint &examp )
             }
             break;
         }
-
+        case BLOOD_ANALYSIS: {
+            patient.moves -= 500;
+            patient.conduct_blood_analysis();
+            patient.add_msg_player_or_npc( m_info,
+                                           _( "The autodoc analyzed your blood." ),
+                                           _( "The autodoc analyzed <npcname>'s blood." ) );
+            break;
+        }
         default:
             return;
     }
