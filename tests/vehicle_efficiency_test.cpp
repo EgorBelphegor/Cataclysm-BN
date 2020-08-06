@@ -412,10 +412,10 @@ TEST_CASE( "vehicle_make_efficiency_case", "[.]" )
 // Fix test for electric vehicles
 TEST_CASE( "vehicle_efficiency", "[vehicle] [engine]" )
 {
-    test_vehicle( "beetle", 815669, 277800, 211800, 70490, 53160 );
+    test_vehicle( "beetle", 816469, 277800, 211800, 70490, 53160 );
     test_vehicle( "car", 1120618, 473700, 277500, 45440, 25170 );
-    test_vehicle( "car_sports", 1154214, 360300, 260700, 36450, 20770 );
-    test_vehicle( "electric_car", 1126087, 213400, 116100, 16900, 8492 );
+    test_vehicle( "car_sports", 1155014, 360300, 260700, 36450, 20770 );
+    test_vehicle( "electric_car", 1126887, 213400, 116100, 16900, 8492 );
     test_vehicle( "suv", 1320286, 902100, 451700, 67740, 30810 );
     test_vehicle( "motorcycle", 163085, 74030, 61180, 46200, 38100 );
     test_vehicle( "quad_bike", 265345, 73170, 73170, 34300, 34300 );
