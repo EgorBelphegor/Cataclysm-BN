@@ -4963,6 +4963,9 @@ void Character::check_needs_extremes()
 
 void Character::get_sick()
 {
+    if (get_healthy() > 100) {
+        return;
+    }
     // NPCs are too dumb to handle infections now
     if( is_npc() || has_trait_flag( "NO_DISEASE" ) ) {
         // In a shocking twist, disease immunity prevents diseases.
@@ -4985,9 +4988,9 @@ void Character::get_sick()
     // This check runs once every 30 minutes, so double to get hours, *24 to get days.
     const int checks_per_year = 2 * 24 * 365;
 
-    // Health is in the range [-200,200].
-    // Diseases are half as common for every 50 health you gain.
-    float health_factor = std::pow( 2.0f, get_healthy() / 50.0f );
+    // Health is in the range [-200,100].
+    // Diseases are half as common for every 25 health you gain.
+    float health_factor = std::pow( 2.0f, get_healthy() / 25.0f );
 
     int disease_rarity = static_cast<int>( checks_per_year * health_factor / base_diseases_per_year );
     add_msg( m_debug, "disease_rarity = %d", disease_rarity );
