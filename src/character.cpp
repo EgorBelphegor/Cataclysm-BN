@@ -1980,7 +1980,7 @@ void Character::conduct_blood_analysis()
                 trim_and_print( w, point( 2, line ), win_w - 3, colors[line - 1], effect_descriptions[line - 1] );
             }
         }
-        wnoutrefresh( w );
+        wrefresh( w );
     } );
     input_context ctxt( "BLOOD_TEST_RESULTS" );
     ctxt.register_action( "CONFIRM" );
