@@ -4240,8 +4240,7 @@ void iexamine::ledge( player &p, const tripoint &examp )
     uilist cmenu;
     cmenu.text = _( "There is a ledge here.  What do you want to do?" );
     cmenu.addentry( 1, true, 'j', _( "Jump over." ) );
-    bool can_climb = g->m.has_zlevels() && g->m.valid_move( p.pos(), examp, false, true );
-    cmenu.addentry( 2, can_climb, 'c', _( "Climb down." ) );
+    cmenu.addentry( 2, true, 'c', _( "Climb down." ) );
 
     cmenu.query();
 
@@ -4267,6 +4266,15 @@ void iexamine::ledge( player &p, const tripoint &examp )
             break;
         }
         case 2: {
+            if (!g->m.has_zlevels()) {
+                // No climbing down in 2D mode
+                return;
+            }
+            if (!g->m.valid_move(p.pos(), examp, false, true)) {
+                // Covered with something
+                return;
+            }
+
             tripoint where = examp;
             tripoint below = examp;
             below.z--;
@@ -4316,7 +4324,7 @@ void iexamine::ledge( player &p, const tripoint &examp )
 
             if( has_grapnel ) {
                 p.add_msg_if_player( _( "You tie the rope around your waist and begin to climb down." ) );
-            } else if( g->m.has_flag( "UNSTABLE", examp + tripoint_below ) && g->slip_down( true ) ) {
+            } else if( g->m.has_flag( "UNSTABLE", examp + tripoint_below ) && g->slip_down() ) {
                 return;
             }
 
