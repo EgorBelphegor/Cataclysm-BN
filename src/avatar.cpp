@@ -370,6 +370,9 @@ int avatar::time_to_read( const item &book, const player &reader, const player *
     if( type->intel > effective_int && !reader.has_trait( trait_PROF_DICEMASTER ) ) {
         retval += type->time * ( type->intel - effective_int ) * 100;
     }
+
+    float multiplier = get_option<float>("READING_TIME_MULTIPLIER");
+    retval = std::max(1, (int)(retval * multiplier));
     return retval;
 }
 

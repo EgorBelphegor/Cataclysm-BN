@@ -2064,6 +2064,11 @@ void options_manager::add_options_world_default()
          0.0, 100, 4.0, 0.01
        );
 
+    add("READING_TIME_MULTIPLIER", "world_default", translate_marker("Book reading time scaling factor"),
+        translate_marker("A scaling factor that determines how fast you read books."),
+        0.01, 10.0, 1.0, 0.01
+    );
+
     add_empty_line();
 
     add( "MONSTER_SPEED", "world_default", translate_marker( "Monster speed" ),
