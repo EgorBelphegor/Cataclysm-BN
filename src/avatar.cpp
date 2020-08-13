@@ -372,7 +372,7 @@ int avatar::time_to_read( const item &book, const player &reader, const player *
     }
 
     float multiplier = get_option<float>("READING_TIME_MULTIPLIER");
-    retval = std::max(1, (int)(retval * multiplier));
+    retval = std::max(1, static_cast<int>(retval * multiplier));
     return retval;
 }
 
