@@ -110,7 +110,6 @@ static const bionic_id bio_syringe( "bio_syringe" );
 
 static const skill_id skill_fabrication( "fabrication" );
 static const skill_id skill_firstaid( "firstaid" );
-static const skill_id skill_lockpick( "lockpick" );
 static const skill_id skill_mechanics( "mechanics" );
 static const skill_id skill_survival( "survival" );
 
@@ -1104,8 +1103,8 @@ int pick_lock_actor::use( player &p, item &it, bool, const tripoint & ) const
     /** @EFFECT_LOCKPICK speeds up door lock picking */
     const int duration = std::max( 0,
                                    to_moves<int>( 10_minutes - time_duration::from_minutes( it.get_quality( qual_LOCKPICK ) ) ) -
-                                   ( p.dex_cur + p.get_skill_level( skill_lockpick ) ) * 2300 );
-    p.practice( skill_lockpick, std::pow( 2, p.get_skill_level( skill_lockpick ) ) + 1 );
+                                   ( p.dex_cur + p.get_skill_level(skill_mechanics) ) * 2300 );
+    p.practice(skill_mechanics, std::pow( 2, p.get_skill_level(skill_mechanics) ) + 1 );
 
     p.assign_activity( activity_id( "ACT_LOCKPICK" ), duration, -1, p.get_item_position( &it ) );
     p.activity.targets.push_back( item_location( p, &it ) );
