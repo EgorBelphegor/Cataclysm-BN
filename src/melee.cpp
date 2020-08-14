@@ -1023,8 +1023,8 @@ void Character::roll_stab_damage( bool crit, damage_instance &di, bool /*average
         skill = BIO_CQB_LEVEL;
     }
     if( unarmed ) {
-        const bool left_empty = !natural_attack_restricted_on( bodypart_id( "hand_l" ) );
-        const bool right_empty = !natural_attack_restricted_on( bodypart_id( "hand_r" ) ) &&
+        const bool left_empty = !natural_attack_restricted_on(bp_hand_l);
+        const bool right_empty = !natural_attack_restricted_on(bp_hand_r) &&
                                  weap.is_null();
         if( left_empty || right_empty ) {
             float per_hand = 0.0f;
