@@ -1192,6 +1192,13 @@ void options_manager::add_options_general()
 
     add_empty_line();
 
+    add("WARNING_ON_HITTING_NEUTRAL", "general", translate_marker("Warning on hitting neutral creature"),
+        translate_marker("If true, you will be aked if you want to hit neutral creature."),
+        true
+    );
+
+    add_empty_line();
+
     add( "SAFEMODE", "general", translate_marker( "Safe mode" ),
          translate_marker( "If true, will hold the game and display a warning if a hostile monster/npc is approaching." ),
          true

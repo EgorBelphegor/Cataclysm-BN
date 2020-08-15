@@ -263,8 +263,17 @@ bool avatar_action::move( avatar &you, map &m, const tripoint &d )
                 add_msg( m_info, _( "Move into the monster to attack." ) );
                 you.clear_destination();
                 return false;
-            } else {
+            } 
+
+            if (get_option<bool>("WARNING_ON_HITTING_NEUTRAL")) {
+                auto att = critter.attitude(you.as_character());
+                if (att == monster_attitude::MATT_FPASSIVE || att == monster_attitude::MATT_IGNORE) {
+                    if (!query_yn(_("Are you shure you want to attack %s?"), critter.name())) {
+                        return false;
+                    }
+                }
             }
+            
             if( you.has_effect( effect_relax_gas ) ) {
                 if( one_in( 8 ) ) {
                     add_msg( m_good, _( "Your willpower asserts itself, and so do you!" ) );
