@@ -92,7 +92,6 @@
     "dispersion": 80,
     "durability": 6,
     "reload": 50,
-    "pierce": 15,
     "ups_charges": 20,
     "valid_mod_locations": [ [ "underbarrel", 1 ], [ "sights", 1 ], [ "accessories", 2 ], [ "stabilizer", 1 ] ]
   },
