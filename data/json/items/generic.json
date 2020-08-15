@@ -1779,18 +1779,6 @@
   },
   {
     "type": "GENERIC",
-    "id": "pinecone",
-    "symbol": ",",
-    "color": "brown",
-    "name": { "str": "pinecone" },
-    "description": "A spiny pod from a pine tree.  Dry seeds rattle around inside when you shake it.",
-    "weight": "90 g",
-    "volume": "250 ml",
-    "to_hit": -2,
-    "flags": [ "TRADER_AVOID" ]
-  },
-  {
-    "type": "GENERIC",
     "id": "poppy_bud",
     "name": { "str": "poppy bud" },
     "category": "chems",

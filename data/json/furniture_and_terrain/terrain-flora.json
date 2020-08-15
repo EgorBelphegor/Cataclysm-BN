@@ -845,7 +845,7 @@
     "id": "t_tree_pine",
     "name": "pine tree",
     "looks_like": "t_tree",
-    "description": "A towering coniferous tree that belongs to the 'Pinus' genus, with the New England species varying from 'P. strobus', 'P. resinosa' and 'P. rigida'.  If you examined the tree more closely, you might find usable sticky whorls and unharvested pinecones.  Also, you could cut it down with the right tools.",
+    "description": "A towering coniferous tree that belongs to the 'Pinus' genus, with the New England species varying from 'P. strobus', 'P. resinosa' and 'P. rigida'.  If you examined the tree more closely, you might find usable sticky whorls.  Also, you could cut it down with the right tools.",
     "symbol": "4",
     "color": "green",
     "move_cost": 0,
@@ -854,10 +854,7 @@
     "transforms_into": "t_tree_pine_harvested",
     "examine_action": "harvest_ter",
     "harvest_by_season": [
-      {
-        "seasons": [ "spring", "summer", "autumn", "winter" ],
-        "entries": [ { "drop": "pine_bough", "base_num": [ 2, 8 ] }, { "drop": "pinecone", "base_num": [ 1, 4 ] } ]
-      }
+      { "seasons": [ "spring", "summer", "autumn", "winter" ], "entries": [ { "drop": "pine_bough", "base_num": [ 2, 8 ] } ] }
     ],
     "bash": {
       "str_min": 80,
@@ -872,7 +869,7 @@
     "type": "terrain",
     "id": "t_tree_pine_harvested",
     "name": "pine tree",
-    "description": "A towering coniferous tree that belongs to the 'Pinus' genus, with the New England species varying from 'P. strobus', 'P. resinosa' and 'P. rigida'.  Some of the branches have been stripped away and many of the pinecones aren't developed fully yet, but given a season, it could be harvestable again.  Also, you could cut it down with the right tools.",
+    "description": "A towering coniferous tree that belongs to the 'Pinus' genus, with the New England species varying from 'P. strobus', 'P. resinosa' and 'P. rigida'.  Some of the branches have been stripped away, but given a season, it could be harvestable again.  Also, you could cut it down with the right tools.",
     "symbol": "4",
     "color": "brown",
     "copy-from": "t_tree_pine",
