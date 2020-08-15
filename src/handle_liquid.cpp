@@ -69,12 +69,14 @@ static void serialize_liquid_source( player_activity &act, const tripoint &pos, 
     act.str_values.push_back( serialize( liquid ) );
 }
 
+/*
 static void serialize_liquid_target( player_activity &act, const vehicle &veh )
 {
     act.values.push_back( LTT_VEHICLE );
     act.values.push_back( 0 ); // dummy
     act.coords.push_back( veh.global_pos3() );
 }
+*/
 
 static void serialize_liquid_target( player_activity &act, int container_item_pos )
 {
