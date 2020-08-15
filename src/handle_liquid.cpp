@@ -367,9 +367,7 @@ static bool perform_liquid_transfer( item &liquid, const tripoint *const source_
             if( target.veh == nullptr ) {
                 break;
             }
-            if( create_activity() ) {
-                serialize_liquid_target( g->u.activity, *target.veh );
-            } else if( g->u.pour_into( *target.veh, liquid ) ) {
+            if( g->u.pour_into( *target.veh, liquid ) ) {
                 g->u.mod_moves( -1000 ); // consistent with veh_interact::do_refill activity
             }
             transfer_ok = true;
