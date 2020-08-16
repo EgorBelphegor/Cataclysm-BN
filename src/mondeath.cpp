@@ -402,9 +402,15 @@ void mdeath::disappear( monster &z )
 
 void mdeath::guilt( monster &z )
 {
-    const int MAX_GUILT_DISTANCE = 5;
+    int MAX_GUILT_DISTANCE = 5;
     int kill_count = g->get_kill_tracker().kill_count( z.type->id );
     int maxKills = 100; // this is when the player stop caring altogether.
+    int ultaguilt_multiplier = 1;
+
+    if (z.has_flag(MF_ULTRAGUILT)) {
+        ultaguilt_multiplier = 2;
+        MAX_GUILT_DISTANCE *= 3;
+    }
 
     // different message as we kill more of the same monster
     std::string msg = _( "You feel guilty for killing %s." ); // default guilt message
@@ -449,10 +455,10 @@ void mdeath::guilt( monster &z )
 
     add_msg( msgtype, msg, z.name() );
 
-    int moraleMalus = -50 * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) );
-    int maxMalus = -250 * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) );
-    time_duration duration = 60_minutes * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) );
-    time_duration decayDelay = 10_minutes * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) );
+    int moraleMalus = -50 * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) ) * ultaguilt_multiplier;
+    int maxMalus = -250 * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) ) * ultaguilt_multiplier;
+    time_duration duration = 60_minutes * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) ) * ultaguilt_multiplier;
+    time_duration decayDelay = 10_minutes * ( 1.0 - ( static_cast<float>( kill_count ) / maxKills ) ) * ultaguilt_multiplier;
     if( z.type->in_species( ZOMBIE ) ) {
         moraleMalus /= 10;
         if( g->u.has_trait( trait_PACIFIST ) ) {

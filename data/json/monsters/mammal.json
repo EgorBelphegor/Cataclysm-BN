@@ -273,7 +273,18 @@
     "placate_triggers": [ "MEAT" ],
     "death_function": [ "NORMAL" ],
     "harvest": "mammal_tiny",
-    "flags": [ "SEES", "HEARS", "GOODHEARING", "SMELLS", "ANIMAL", "CATFOOD", "PATH_AVOID_DANGER_1", "WARM", "HIT_AND_RUN", "GUILT" ],
+    "flags": [
+      "SEES",
+      "HEARS",
+      "GOODHEARING",
+      "SMELLS",
+      "ANIMAL",
+      "CATFOOD",
+      "PATH_AVOID_DANGER_1",
+      "WARM",
+      "HIT_AND_RUN",
+      "ULTRAGUILT"
+    ],
     "upgrades": { "age_grow": 120, "into": "mon_cat" }
   },
   {
@@ -596,7 +607,7 @@
     "harvest": "mammal_large_leather",
     "upgrades": { "age_grow": 180, "into": "mon_cow" },
     "special_attacks": [ [ "EAT_CROP", 60 ] ],
-    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "CATTLEFODDER", "PET_WONT_FOLLOW", "GUILT" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "CATTLEFODDER", "PET_WONT_FOLLOW", "ULTRAGUILT" ]
   },
   {
     "id": "mon_cow",
@@ -846,7 +857,7 @@
     "vision_night": 4,
     "harvest": "mammal_tiny",
     "upgrades": { "age_grow": 42, "into": "mon_dog" },
-    "extend": { "flags": [ "NO_BREED" ] }
+    "extend": { "flags": [ "NO_BREED", "ULTRAGUILT" ] }
   },
   {
     "id": "mon_dog_bull",
@@ -1046,7 +1057,7 @@
       "SMELLS",
       "SWARMS",
       "WARM",
-      "GUILT"
+      "ULTRAGUILT"
     ]
   },
   {
@@ -1110,7 +1121,7 @@
     "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": [ "NORMAL" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ] ],
-    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "GUILT" ]
+    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "ULTRAGUILT" ]
   },
   {
     "id": "mon_dog_boxer",
@@ -1174,7 +1185,7 @@
       "SMELLS",
       "SWARMS",
       "WARM",
-      "GUILT"
+      "ULTRAGUILT"
     ]
   },
   {
@@ -1317,7 +1328,7 @@
       "SMELLS",
       "STUMBLES",
       "WARM",
-      "GUILT"
+      "ULTRAGUILT"
     ]
   },
   {
@@ -1368,7 +1379,7 @@
     "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": [ "NORMAL" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ] ],
-    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "GUILT" ]
+    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "ULTRAGUILT" ]
   },
   {
     "id": "mon_dog_gpyrenees",
@@ -1435,7 +1446,7 @@
     "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": [ "NORMAL" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ] ],
-    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "GUILT" ]
+    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "ULTRAGUILT" ]
   },
   {
     "id": "mon_dog_rottweiler",
@@ -1501,7 +1512,7 @@
     "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": [ "NORMAL" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ] ],
-    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "GUILT" ]
+    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "ULTRAGUILT" ]
   },
   {
     "id": "mon_dog_auscattle",
@@ -1566,7 +1577,7 @@
     "fear_triggers": [ "FRIEND_ATTACKED", "FRIEND_DIED", "HURT" ],
     "death_function": [ "NORMAL" ],
     "special_attacks": [ [ "EAT_FOOD", 100 ] ],
-    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "GUILT" ]
+    "flags": [ "ANIMAL", "DOGFOOD", "HEARS", "KEENNOSE", "PATH_AVOID_DANGER_1", "SEES", "SMELLS", "WARM", "ULTRAGUILT" ]
   },
   {
     "id": "mon_fox_gray",
@@ -2157,7 +2168,7 @@
     "death_function": [ "NORMAL" ],
     "upgrades": { "age_grow": 240, "into": "mon_sheep" },
     "//": "Puberty reached in 6-9 months.",
-    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "GUILT" ]
+    "flags": [ "SEES", "HEARS", "SMELLS", "ANIMAL", "PATH_AVOID_DANGER_1", "WARM", "ULTRAGUILT" ]
   },
   {
     "id": "mon_sheep",
