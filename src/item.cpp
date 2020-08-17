@@ -2627,18 +2627,10 @@ void item::armor_fit_info( std::vector<iteminfo> &info, const iteminfo_query *pa
     }
     if( is_power_armor() && parts->test( iteminfo_parts::DESCRIPTION_FLAGS_POWERARMOR ) ) {
         info.push_back( iteminfo( "DESCRIPTION",
-                                  _( "* This gear is a part of power armor." ) ) );
+                                  _( "* This gear is a power armor." ) ) );
         if( parts->test( iteminfo_parts::DESCRIPTION_FLAGS_POWERARMOR_RADIATIONHINT ) ) {
-            if( covers( bp_head ) ) {
-                info.push_back( iteminfo( "DESCRIPTION",
-                                          _( "* When worn with a power armor suit, it will "
-                                             "<good>fully protect</good> you from "
-                                             "<info>radiation</info>." ) ) );
-            } else {
-                info.push_back( iteminfo( "DESCRIPTION",
-                                          _( "* When worn with a power armor helmet, it will "
-                                             "<good>fully protect</good> you from " "<info>radiation</info>." ) ) );
-            }
+            info.push_back( iteminfo( "DESCRIPTION", _( "* When worn, it will "
+                "<good>fully protect</good> you from " "<info>radiation</info>." ) ) );
         }
     }
     if( typeId() == "rad_badge" && parts->test( iteminfo_parts::DESCRIPTION_IRRADIATION ) ) {

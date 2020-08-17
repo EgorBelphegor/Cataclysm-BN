@@ -2904,8 +2904,7 @@ ret_val<bool> Character::can_wear( const item &it, bool with_equip_change ) cons
 
     if( it.is_power_armor() ) {
         for( auto &elem : worn ) {
-            if( ( elem.get_covered_body_parts() & it.get_covered_body_parts() ).any() &&
-                !elem.has_flag( flag_POWERARMOR_COMPATIBLE ) ) {
+            if( !elem.has_flag( flag_POWERARMOR_COMPATIBLE ) ) {
                 return ret_val<bool>::make_failure( _( "Can't wear power armor over other gear!" ) );
             }
         }
@@ -2931,11 +2930,7 @@ ret_val<bool> Character::can_wear( const item &it, bool with_equip_change ) cons
             }
         }
     } else {
-        // Only headgear can be worn with power armor, except other power armor components.
-        // You can't wear headgear if power armor helmet is already sitting on your head.
-        bool has_helmet = false;
-        if( !it.has_flag( flag_POWERARMOR_COMPATIBLE ) && ( ( is_wearing_power_armor( &has_helmet ) &&
-                ( has_helmet || !( it.covers( bp_head ) || it.covers( bp_mouth ) || it.covers( bp_eyes ) ) ) ) ) ) {
+        if( !it.has_flag( flag_POWERARMOR_COMPATIBLE ) && is_wearing_power_armor( ) ) {
             return ret_val<bool>::make_failure( _( "Can't wear %s with power armor!" ), it.tname() );
         }
     }
@@ -3595,25 +3590,13 @@ static void layer_item( std::array<encumbrance_data, num_bp> &vals,
     }
 }
 
-bool Character::is_wearing_power_armor( bool *hasHelmet ) const
+bool Character::is_wearing_power_armor( ) const
 {
-    bool result = false;
     for( auto &elem : worn ) {
-        if( !elem.is_power_armor() ) {
-            continue;
-        }
-        if( hasHelmet == nullptr ) {
-            // found power armor, helmet not requested, cancel loop
+        if( elem.is_power_armor() ) {
             return true;
-        }
-        // found power armor, continue search for helmet
-        result = true;
-        if( elem.covers( bp_head ) ) {
-            *hasHelmet = true;
-            return true;
-        }
+        }       
     }
-    return result;
 }
 
 bool Character::is_wearing_active_power_armor() const
@@ -6191,8 +6174,7 @@ bool Character::is_immune_damage( const damage_type dt ) const
 
 bool Character::is_rad_immune() const
 {
-    bool has_helmet = false;
-    return ( is_wearing_power_armor( &has_helmet ) && has_helmet ) || worn_with_flag( "RAD_PROOF" );
+    return ( is_wearing_power_armor() ) || worn_with_flag( "RAD_PROOF" );
 }
 
 int Character::throw_range( const item &it ) const
@@ -9704,7 +9686,7 @@ float Character::power_rating() const
     if( has_trait( trait_HUGE ) || has_trait( trait_HUGE_OK ) ) {
         ret += 1;
     }
-    if( is_wearing_power_armor( nullptr ) ) {
+    if( is_wearing_power_armor( ) ) {
         ret = 5; // No mercy!
     }
     return ret;

@@ -10,9 +10,7 @@
       { "item": "transponder", "count": [ 0, 1 ], "prob": 25 },
       { "item": "circuit", "count": [ 0, 8 ], "prob": 40 },
       { "item": "small_lcd_screen", "count": [ 0, 2 ], "prob": 25 },
-      { "item": "RAM", "count": [ 0, 1 ], "prob": 25 },
-      { "item": "depowered_helmet", "count": [ 0, 1 ], "prob": 20 },
-      { "item": "depowered_armor", "count": [ 0, 1 ], "prob": 20 }
+      { "item": "RAM", "count": [ 0, 1 ], "prob": 25 }
     ]
   },
   {

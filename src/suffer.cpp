@@ -1003,8 +1003,7 @@ void Character::suffer_from_radiation()
     const bool rad_mut_proc = rad_mut > 0 && x_in_y( rad_mut, to_turns<int>( in_sleep_state() ?
                               3_hours : 30_minutes ) );
 
-    bool has_helmet = false;
-    const bool power_armored = is_wearing_power_armor( &has_helmet );
+    const bool power_armored = is_wearing_power_armor();
     const bool rad_resist = power_armored || worn_with_flag( flag_RAD_RESIST );
 
     if( rad_mut > 0 ) {
@@ -1483,8 +1482,7 @@ bool Character::irradiate( float rads, bool bypass )
     }
 
     if( rads > 0 ) {
-        bool has_helmet = false;
-        const bool power_armored = is_wearing_power_armor( &has_helmet );
+        const bool power_armored = is_wearing_power_armor( );
         const bool rad_resist = power_armored || worn_with_flag( "RAD_RESIST" );
 
         if( is_rad_immune() && !bypass ) {

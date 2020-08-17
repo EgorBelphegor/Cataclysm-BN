@@ -537,7 +537,7 @@ class Character : public Creature, public visitable<Character>
         int extraEncumbrance( layer_level level, int bp ) const;
 
         /** Returns true if the character is wearing power armor */
-        bool is_wearing_power_armor( bool *hasHelmet = nullptr ) const;
+        bool is_wearing_power_armor( ) const;
         /** Returns true if the character is wearing active power */
         bool is_wearing_active_power_armor() const;
         /** Returns true if the player is wearing an active optical cloak */
