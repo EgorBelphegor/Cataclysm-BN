@@ -2903,27 +2903,29 @@ ret_val<bool> Character::can_wear( const item &it, bool with_equip_change ) cons
     }
 
     if( it.is_power_armor() ) {
-        for( auto &elem : worn ) {
-            if( !elem.has_flag( flag_POWERARMOR_COMPATIBLE ) ) {
-                return ret_val<bool>::make_failure( _( "Can't wear power armor over other gear!" ) );
+        if (it.get_covered_body_parts().any()) {
+            for (auto& elem : worn) {
+                if (!elem.has_flag(flag_POWERARMOR_COMPATIBLE)) {
+                    return ret_val<bool>::make_failure(_("Can't wear power armor over other gear!"));
+                }
             }
         }
-        if( !it.covers( bp_torso ) ) {
+        else {
             bool power_armor = false;
-            if( !worn.empty() ) {
-                for( auto &elem : worn ) {
-                    if( elem.is_power_armor() ) {
+            if (!worn.empty()) {
+                for (auto& elem : worn) {
+                    if (elem.is_power_armor()) {
                         power_armor = true;
                         break;
                     }
                 }
             }
-            if( !power_armor ) {
+            if (!power_armor) {
                 return ret_val<bool>::make_failure(
-                           _( "You can only wear power armor components with power armor!" ) );
+                    _("You can only wear power armor components with power armor!"));
             }
         }
-
+        
         for( auto &i : worn ) {
             if( i.is_power_armor() && i.typeId() == it.typeId() ) {
                 return ret_val<bool>::make_failure( _( "Can't wear more than one %s!" ), it.tname() );
