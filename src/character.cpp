@@ -3597,6 +3597,7 @@ bool Character::is_wearing_power_armor( ) const
             return true;
         }       
     }
+    return false;
 }
 
 bool Character::is_wearing_active_power_armor() const
