@@ -497,7 +497,6 @@ void weather_effect::light_acid()
             if( g->u.worn_with_flag( "RAINPROOF" ) && !one_in( 4 ) ) {
                 add_msg( _( "Your clothing protects you from the acidic drizzle." ) );
             } else {
-                bool has_helmet = false;
                 if( g->u.is_wearing_power_armor() ) {
                     add_msg( _( "Your power armor protects you from the acidic drizzle." ) );
                 } else {
@@ -524,7 +523,6 @@ void weather_effect::acid()
             if( g->u.worn_with_flag( "RAINPROOF" ) && one_in( 2 ) ) {
                 add_msg( _( "Your clothing protects you from the acid rain." ) );
             } else {
-                bool has_helmet = false;
                 if( g->u.is_wearing_power_armor()) {
                     add_msg( _( "Your power armor protects you from the acid rain." ) );
                 } else {
