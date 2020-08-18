@@ -1543,7 +1543,8 @@ bool Character::block_hit( Creature *source, body_part &bp_hit, damage_instance 
     item &shield = best_shield();
     block_bonus = blocking_ability( shield );
     bool conductive_shield = shield.conductive();
-    bool unarmed = weapon.has_flag( "UNARMED_WEAPON" );
+
+    bool unarmed = !is_armed() || weapon.has_flag( "UNARMED_WEAPON" );
     bool force_unarmed = martial_arts_data.is_force_unarmed();
 
     int melee_skill = get_skill_level( skill_melee );
