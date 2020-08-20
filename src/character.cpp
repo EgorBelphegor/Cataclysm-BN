@@ -1308,6 +1308,18 @@ bool Character::can_run()
 
 bool Character::move_effects( bool attacking )
 {
+    if (attacking) {
+        if (encumb(bp_arm_l) >= 150 || encumb(bp_arm_r) >= 150 || encumb(bp_torso) >= 150) {
+            add_msg_if_player(_("You can't attack with so much encumbrance!"));
+            return false;
+        }
+    }
+    else {
+        if (encumb(bp_leg_l) >= 150 || encumb(bp_leg_r) >= 150) {
+            add_msg_if_player(_("You can't move with so much encumbrance!"));
+            return false;
+        }
+    }
     if( has_effect( effect_downed ) ) {
         /** @EFFECT_DEX increases chance to stand up when knocked down */
 
@@ -2732,6 +2744,9 @@ units::mass Character::weight_capacity() const
     for( const item &it : worn ) {
         ret *= it.get_weight_capacity_modifier();
         worn_weight_bonus += it.get_weight_capacity_bonus();
+        if (it.is_power_armor() && it.active) {
+            worn_weight_bonus += it.weight() * 2;
+        }
     }
 
     units::mass bio_weight_bonus = 0_gram;
@@ -3553,7 +3568,7 @@ bool Character::change_side( item_location &loc, bool interactive )
 static void layer_item( std::array<encumbrance_data, num_bp> &vals,
                         const item &it,
                         std::array<layer_level, num_bp> &highest_layer_so_far,
-                        bool power_armor, const Character &c )
+                        const Character &c )
 {
     const auto item_layer = it.get_layer();
     int encumber_val = it.get_encumber( c );
@@ -3570,8 +3585,8 @@ static void layer_item( std::array<encumbrance_data, num_bp> &vals,
         layering_encumbrance = 0;
     }
 
-    const int armorenc = !power_armor || !it.is_power_armor() ?
-                         encumber_val : std::max( 0, encumber_val - 40 );
+    const int armorenc = (!it.is_power_armor() || !it.active)?
+                         encumber_val : encumber_val/5;
 
     body_part_set covered_parts = it.get_covered_body_parts();
     for( const body_part bp : all_body_parts ) {
@@ -3783,16 +3798,15 @@ void Character::item_encumb( std::array<encumbrance_data, num_bp> &vals,
     std::fill( highest_layer_so_far.begin(), highest_layer_so_far.end(),
                PERSONAL_LAYER );
 
-    const bool power_armored = is_wearing_active_power_armor();
     for( auto w_it = worn.begin(); w_it != worn.end(); ++w_it ) {
         if( w_it == new_item_position ) {
-            layer_item( vals, new_item, highest_layer_so_far, power_armored, *this );
+            layer_item( vals, new_item, highest_layer_so_far, *this );
         }
-        layer_item( vals, *w_it, highest_layer_so_far, power_armored, *this );
+        layer_item( vals, *w_it, highest_layer_so_far, *this );
     }
 
     if( worn.end() == new_item_position && !new_item.is_null() ) {
-        layer_item( vals, new_item, highest_layer_so_far, power_armored, *this );
+        layer_item( vals, new_item, highest_layer_so_far, *this );
     }
 
     // make sure values are sane

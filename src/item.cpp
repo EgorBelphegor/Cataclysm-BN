@@ -5586,6 +5586,10 @@ int item::acid_resist( bool to_self, int base_env_resist ) const
         return 0.0;
     }
 
+    if (is_power_armor()) {
+        mod += 40;
+    }
+
     const std::vector<const material_type *> mat_types = made_of_types();
     if( !mat_types.empty() ) {
         // Not sure why cut and bash get an armor thickness bonus but acid doesn't,
@@ -5618,6 +5622,10 @@ int item::fire_resist( bool to_self, int base_env_resist ) const
     float mod = get_clothing_mod_val( clothing_mod_type_fire );
     if( is_null() ) {
         return 0.0;
+    }
+
+    if (is_power_armor()) {
+        mod += 40;
     }
 
     const std::vector<const material_type *> mat_types = made_of_types();
